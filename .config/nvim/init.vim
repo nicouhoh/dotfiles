@@ -8,30 +8,37 @@ call plug#begin()
 	Plug 'frazrepo/vim-rainbow'				            " Rainbow brackets
 	Plug 'tpope/vim-surround'				            " Change surrounding marks
     Plug 'tpope/vim-endwise'                            " Automatically end structures
-"{{ File Management }}
+    Plug 'terryma/vim-smooth-scroll'                    " Smooth scrolling
+    Plug 'ap/vim-css-color'                             " Highlight hex colors
+    Plug 'jesseleite/vim-noh'                           " clear search highlighting when cursor is moved
+"{{ Telescope }}
 	" Plug 'vifm/vifm.vim'					            " Vifm
     Plug 'nvim-telescope/telescope.nvim'                " Telescope
-    Plug 'sophacles/vim-processing'
+    Plug 'nvim-lua/plenary.nvim'                        " required for Telescope
+    Plug 'BurntSushi/ripgrep'                           " required for live_grep and grep_string
+    Plug 'nvim-telescope/telescope-fzf-native.nvim'     " native telescope sorter to significantly improve sorting performance
 "{{ NERDTree }}
 	Plug 'scrooloose/nerdtree' |				        " Nerdtree
                 \ Plug 'ryanoasis/vim-devicons'	|		" Icons for Nerdtree
                 \ Plug 'Xuyuanp/nerdtree-git-plugin'    " Git in Nerdtree
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'		" Highlighting Nerdtree
     Plug 'PhilRunninger/nerdtree-visual-selection'      " visual select in Nerdtree
-    
 "{{ Syntax Highlighting and Colors }}
+    Plug 'nvim-treesitter/nvim-treesitter'              " Syntax highlighting
 	Plug 'PotatoesMaster/i3-vim-syntax'			        " i3 config highlighting
+    Plug 'sophacles/vim-processing'
 "{{ Git }}
     Plug 'mhinz/vim-signify'                    " indicate added, modified, removed lines in sign column
     Plug 'itchyny/vim-gitbranch'                " provides a function to return the current git branch
     Plug 'itchyny/vim-fugitive'                 " Git commands in Vim
 "{{ LSP (from old dotfiles) }}
-    "Plug 'neovim/nvim-lspconfig'               " lsp
-    "Plug 'kabouzeid/nvim-lspinstall'           " adds :LspInstall <language> command to nvim-lspconfig
-    "Plug 'hrsh7th/vim-vsnip'                   " snippets for lsp
-    "Plug 'hrsh7th/vim-vsnip-integ'             " plugin integration for vim-vsnip
-"{{ Junegunn Choi Plugins }}
-	"Plug 'junegunn/vim-emoji'				" Emojis for vim
+    Plug 'neovim/nvim-lspconfig'               " lsp
+    Plug 'kabouzeid/nvim-lspinstall'           " adds :LspInstall <language> command to nvim-lspconfig
+    Plug 'hrsh7th/vim-vsnip'                   " snippets for lsp
+    Plug 'hrsh7th/vim-vsnip-integ'             " plugin integration for vim-vsnip
+"{{ Cute stuff }}
+	Plug 'junegunn/vim-emoji'				" Emojis for vim
+    Plug 'kyazdani42/nvim-web-devicons'     " icons
 "{{ Writing }}
     Plug 'dpelle/vim-LanguageTool'          " Check spelling & grammar
     "Plug 'ron89/thesaurus_query.vim'        " Thesaurus
@@ -57,14 +64,17 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""
 "set path+=**			    " Searches current directory recursively
 set termguicolors
+
 let ayucolor="mirage"
 colorscheme ayu
 set wildmenu			    " Display all matches when tab completing
 set wildmode=longest,full
-set ignorecase              " case insensitive search
+set hlsearch
 set incsearch 			    " Incremental search
+set ignorecase              " case insensitive search
 set hidden			        " Needed to keep multiple buffers open
-set nobackup			    " No auto backups
+set backupdir=~/.nvim/backup//    " Set backup directory
+set directory=~/.nvim/swap//      " Set swapfile directory
 set noswapfile			    " No swap
 set t_Co=256			    " Set if term supports 256 colors
 set number			        " Display line numbers
@@ -118,8 +128,6 @@ filetype plugin indent on   "allow auto-indenting depending on filetype
 noremap <Space> <Nop>
 sunmap <Space>
 let mapleader=" "                   " Leader
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mouse Scrolling
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,6 +195,14 @@ nnoremap fh <cmd>Telescope help_tags<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-smooth-scroll
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
+noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
+noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
+noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-pencil
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
@@ -198,6 +214,12 @@ augroup pencil
     autocmd FileType text         call pencil#init()
 augroup END
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Goyo and Limelight
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>gy :Goyo<CR>
+autocmd! User GoyoEnter Limelight       " start Limelight on entering Goyo
+autocmd! User GoyoLeave Limelight!      " turn off Limelight when leaving Goyo
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc Plugins

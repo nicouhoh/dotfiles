@@ -109,15 +109,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#####################################################################
+# ALIASES
+#####################################################################
+
 alias emacs="emacsclient -c -a 'emacs'"
 alias dotfiles='/usr/bin/git --git-dir=/home/nicouhoh/.dotfiles/ --work-tree=/home/nicouhoh'
 alias vim='nvim'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias zshrc='nvim ~/.zshrc'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # syntax highlighting in zsh
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # but remove the underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
