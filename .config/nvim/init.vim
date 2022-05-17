@@ -40,6 +40,7 @@ call plug#begin()
 "{{ Markdown }}
 	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}	" Markdown Preview
     Plug 'plasticboy/vim-markdown'          " for langauge-specific plugins
+    Plug 'masukomi/vim-markdown-folding'    " Fold headers
 "{{ Writing }}
     Plug 'reedes/vim-pencil'                " Make vim more friendly for writing
     Plug 'preservim/vim-lexical'            " Spell-check, dictionary & thesaurus completion
