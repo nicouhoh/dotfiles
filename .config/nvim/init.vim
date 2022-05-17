@@ -53,6 +53,7 @@ call plug#begin()
     Plug 'vim-pandoc/vim-pandoc'            " pandoc for vim
     Plug 'vim-pandoc/vim-pandoc-syntax'
     Plug 'swordguin/vim-veil'               " ignore your inner editor and hide text from prying eyes
+    Plug 'cwoac/nvvim'                      " Notational Velocity -like notes
 "{{ Colorschemes }}
     Plug 'morhetz/gruvbox'
     Plug 'rakr/vim-one'
