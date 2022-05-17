@@ -70,9 +70,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""
-"set path+=**			    " Searches current directory recursively
 set termguicolors
-
 let ayucolor="mirage"
 colorscheme ayu
 set wildmenu			    " Display all matches when tab completing
@@ -176,6 +174,7 @@ map <Leader>tk <C-w>t<C-w>K
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
 "augroup Markdown
     "autocmd!
     "autocmd FileType markdown set wrap
@@ -237,6 +236,9 @@ autocmd! User GoyoLeave Limelight!      " turn off Limelight when leaving Goyo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" nvvim
+
 
 " vim-veil
     nmap <Leader>vv <Plug>Veil
