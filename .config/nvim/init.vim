@@ -4,7 +4,6 @@ call plug#begin()
 
 "{{ The Basics }}
 	Plug 'itchyny/lightline.vim'				        " Lightline statusbar
-	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}	" Markdown Preview
 	Plug 'frazrepo/vim-rainbow'				            " Rainbow brackets
 	Plug 'tpope/vim-surround'				            " Change surrounding marks
     Plug 'tpope/vim-endwise'                            " Automatically end structures
@@ -12,7 +11,6 @@ call plug#begin()
     Plug 'ap/vim-css-color'                             " Highlight hex colors
     Plug 'jesseleite/vim-noh'                           " clear search highlighting when cursor is moved
 "{{ Telescope }}
-	" Plug 'vifm/vifm.vim'					            " Vifm
     Plug 'nvim-telescope/telescope.nvim'                " Telescope
     Plug 'nvim-lua/plenary.nvim'                        " required for Telescope
     Plug 'BurntSushi/ripgrep'                           " required for live_grep and grep_string
@@ -39,14 +37,21 @@ call plug#begin()
 "{{ Cute stuff }}
 	Plug 'junegunn/vim-emoji'				" Emojis for vim
     Plug 'kyazdani42/nvim-web-devicons'     " icons
+"{{ Markdown }}
+	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}	" Markdown Preview
+    Plug 'plasticboy/vim-markdown'          " for langauge-specific plugins
 "{{ Writing }}
-    Plug 'dpelle/vim-LanguageTool'          " Check spelling & grammar
-    "Plug 'ron89/thesaurus_query.vim'        " Thesaurus
+    Plug 'reedes/vim-pencil'                " Make vim more friendly for writing
+    Plug 'preservim/vim-lexical'            " Spell-check, dictionary & thesaurus completion
+    Plug 'preservim/vim-litecorrect'        " Lightweight autocorrection (i.e. 'teh' -> 'the')
 	Plug 'junegunn/goyo.vim'				" Distraction-free viewing
     Plug 'junegunn/limelight.vim'           " Focus segments of text
-    Plug 'reedes/vim-pencil'                " Make vim more friendly for writing
+    Plug 'kana/vim-textobj-user'            " dependency for textobj-sentence
+    Plug 'preservim/vim-textobj-sentence'             " Sentence text objects
     Plug 'reedes/vim-wordy'                 " Check for bad word
-    Plug 'plasticboy/vim-markdown'          " for langauge-specific plugins
+    Plug 'vim-pandoc/vim-pandoc'            " pandoc for vim
+    Plug 'vim-pandoc/vim-pandoc-syntax'
+    Plug 'swordguin/vim-veil'               " ignore your inner editor and hide text from prying eyes
 "{{ Colorschemes }}
     Plug 'morhetz/gruvbox'
     Plug 'rakr/vim-one'
@@ -55,6 +60,7 @@ call plug#begin()
     Plug 'jeffkreeftmeijer/vim-dim'
     Plug 'ayu-theme/ayu-vim'
     Plug 'romgrk/doom-one.vim'
+    Plug 'preservim/vim-colors-pencil'
 
 call plug#end()
 
@@ -207,12 +213,17 @@ noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype plugin on
-let g:pencil#WrapModeDefault = 'soft'   "default is 'hard'
 augroup pencil
     autocmd!
-    autocmd FileType markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init()
+    autocmd FileType markdown,mkd,text  call pencil#init()
+                                    \ | call lexical#init()
+                                    \ | call litecorrect#init()
+                                    \ | setl spell spl=en_us fdl=4 noru nonu nornu
+                                    \ | setl fdo+=search
 augroup END
+
+" Pencil writing controls
+let g:pencil#wrapModeDefault = 'soft'   "default is 'hard'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Goyo and Limelight
@@ -225,10 +236,13 @@ autocmd! User GoyoLeave Limelight!      " turn off Limelight when leaving Goyo
 " Misc Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"	" vim-vsnip
-"		let g:completion_enable_snippet = 'vim-vsnip'
-"		" pmenu and vim-vsnip
-"		imap <expr> <Tab>   pumvisible() ? "<C-n>" : vsnip#jumpable(1)   ? "<Plug>(vsnip-jump-next)" : "<Tab>"
-"		imap <expr> <S-Tab> pumvisible() ? "<C-p>" : vsnip#jumpable(-1)  ? "<Plug>(vsnip-jump-prev)" : "<S-Tab>"
-"		smap <expr> <Tab>   vsnip#jumpable(1)  ? "<Plug>(vsnip-jump-next)" : "<Tab>"
-"		smap <expr> <S-Tab> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)" : "<S-Tab>"
+" vim-veil
+    nmap <Leader>vv <Plug>Veil
+
+" vim-vsnip
+    let g:completion_enable_snippet = 'vim-vsnip'
+    " pmenu and vim-vsnip
+    imap <expr> <Tab>   pumvisible() ? "<C-n>" : vsnip#jumpable(1)   ? "<Plug>(vsnip-jump-next)" : "<Tab>"
+    imap <expr> <S-Tab> pumvisible() ? "<C-p>" : vsnip#jumpable(-1)  ? "<Plug>(vsnip-jump-prev)" : "<S-Tab>"
+    smap <expr> <Tab>   vsnip#jumpable(1)  ? "<Plug>(vsnip-jump-next)" : "<Tab>"
+    smap <expr> <S-Tab> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)" : "<S-Tab>"

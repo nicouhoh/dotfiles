@@ -399,6 +399,9 @@ exec --no-startup-id sleep 2 && nitrogen --restore
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
 
+
+# Redshift
+exec --no-startup-id redshift -l 34.01:-118.44
 # disable power saving (for example if using xscreensaver)
 #exec --no-startup-id xset -dpms
 
