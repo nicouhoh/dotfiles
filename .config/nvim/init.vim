@@ -1,4 +1,4 @@
-" VIM-PLUG {{{
+"VIM-PLUG {{{
 
 call plug#begin()
 
@@ -26,34 +26,34 @@ call plug#begin()
 	Plug 'PotatoesMaster/i3-vim-syntax'			        " i3 config highlighting
     Plug 'sophacles/vim-processing'
 "{{ Git }}
-    Plug 'mhinz/vim-signify'                    " indicate added, modified, removed lines in sign column
-    Plug 'itchyny/vim-gitbranch'                " provides a function to return the current git branch
-    Plug 'itchyny/vim-fugitive'                 " Git commands in Vim
+    Plug 'mhinz/vim-signify'                            " indicate added, modified, removed lines in sign column
+    Plug 'itchyny/vim-gitbranch'                        " provides a function to return the current git branch
+    Plug 'itchyny/vim-fugitive'                         " Git commands in Vim
 "{{ LSP (from old dotfiles) }}
-    Plug 'neovim/nvim-lspconfig'               " lsp
-    Plug 'kabouzeid/nvim-lspinstall'           " adds :LspInstall <language> command to nvim-lspconfig
-    Plug 'hrsh7th/vim-vsnip'                   " snippets for lsp
-    Plug 'hrsh7th/vim-vsnip-integ'             " plugin integration for vim-vsnip
+    Plug 'neovim/nvim-lspconfig'                        " lsp
+    Plug 'kabouzeid/nvim-lspinstall'                    " adds :LspInstall <language> command to nvim-lspconfig
+    Plug 'hrsh7th/vim-vsnip'                            " snippets for lsp
+    Plug 'hrsh7th/vim-vsnip-integ'                      " plugin integration for vim-vsnip
 "{{ Cute stuff }}
-	Plug 'junegunn/vim-emoji'				" Emojis for vim
-    Plug 'kyazdani42/nvim-web-devicons'     " icons
+	Plug 'junegunn/vim-emoji'				            " Emojis for vim
+    Plug 'kyazdani42/nvim-web-devicons'                 " icons
 "{{ Markdown }}
 	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}	" Markdown Preview
-    Plug 'plasticboy/vim-markdown'          " for langauge-specific plugins
-    Plug 'masukomi/vim-markdown-folding'    " Fold headers
+    Plug 'plasticboy/vim-markdown'                      " for langauge-specific plugins
+    Plug 'masukomi/vim-markdown-folding'                " Fold headers
 "{{ Writing }}
-    Plug 'reedes/vim-pencil'                " Make vim more friendly for writing
-    Plug 'preservim/vim-lexical'            " Spell-check, dictionary & thesaurus completion
-    Plug 'preservim/vim-litecorrect'        " Lightweight autocorrection (i.e. 'teh' -> 'the')
-	Plug 'junegunn/goyo.vim'				" Distraction-free viewing
-    Plug 'junegunn/limelight.vim'           " Focus segments of text
-    Plug 'kana/vim-textobj-user'            " dependency for textobj-sentence
-    Plug 'preservim/vim-textobj-sentence'             " Sentence text objects
-    Plug 'reedes/vim-wordy'                 " Check for bad word
-    Plug 'vim-pandoc/vim-pandoc'            " pandoc for vim
+    Plug 'reedes/vim-pencil'                            " Make vim more friendly for writing
+    Plug 'preservim/vim-lexical'                        " Spell-check, dictionary & thesaurus completion
+    Plug 'preservim/vim-litecorrect'                    " Lightweight autocorrection (i.e. 'teh' -> 'the')
+	Plug 'junegunn/goyo.vim'				            " Distraction-free viewing
+    Plug 'junegunn/limelight.vim'                       " Focus segments of text
+    Plug 'kana/vim-textobj-user'                        " dependency for textobj-sentence
+    Plug 'preservim/vim-textobj-sentence'               " Sentence text objects
+    Plug 'reedes/vim-wordy'                             " Check for bad word
+    Plug 'vim-pandoc/vim-pandoc'                        " pandoc for vim
     Plug 'vim-pandoc/vim-pandoc-syntax'
-    Plug 'swordguin/vim-veil'               " ignore your inner editor and hide text from prying eyes
-    Plug 'cwoac/nvvim'                      " Notational Velocity -like notes
+    Plug 'swordguin/vim-veil'                           " ignore your inner editor and hide text from prying eyes
+    "Plug 'cwoac/nvvim'                                 " Notational Velocity -like notes
 "{{ Colorschemes }}
     Plug 'morhetz/gruvbox'
     Plug 'rakr/vim-one'
@@ -93,6 +93,8 @@ syntax enable
 let g:rehash256 = 1
 set updatetime=100          " default updatetime 4000ms is not good for async update (i.e. vim-signify)
 set nowrap                  " disable wrapping
+set foldmethod=expr
+let g:pandoc#spell#enabled = 0      "disable pandoc's spell check
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,12 +144,12 @@ set mouse=a
 
 autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Splits and Tabbed Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set splitbelow splitright
-"set fillchars+=vert:\ 
+" Remove pipes | that act as separators on splits
+" set fillchars+=vert:\
 highlight VertSplit cterm=NONE
 
 
@@ -167,8 +169,6 @@ noremap <silent> <C-Down> :resize -3<CR>
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
-" Remove pipes | that act as separators on splits
-" set fillchars+=vert:\
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -210,21 +210,24 @@ noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-pencil
+" Writing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype plugin on
 augroup pencil
     autocmd!
     autocmd FileType markdown,mkd,text  call pencil#init()
-                                    \ | call lexical#init()
+                                    \ | call lexical#init({ 'spell': 0 })
                                     \ | call litecorrect#init()
-                                    \ | setl spell spl=en_us fdl=4 noru nonu nornu
+                                    \ | call textobj#sentence#init()
                                     \ | setl fdo+=search
 augroup END
 
 " Pencil writing controls
 let g:pencil#wrapModeDefault = 'soft'   "default is 'hard'
+" lexical settings
+let g:lexical#thesaurus = ['~/.nvim/thesaurus/thesaurus.txt']
+let g:lexical#thesaurus_key = '<leader>t'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Goyo and Limelight
@@ -236,9 +239,6 @@ autocmd! User GoyoLeave Limelight!      " turn off Limelight when leaving Goyo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" nvvim
-
 
 " vim-veil
     nmap <Leader>vv <Plug>Veil
