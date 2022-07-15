@@ -136,6 +136,8 @@ filetype plugin indent on   "allow auto-indenting depending on filetype
 noremap <Space> <Nop>
 sunmap <Space>
 let mapleader=" "                   " Leader
+map H 0
+map L $
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mouse Scrolling
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

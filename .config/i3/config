@@ -51,7 +51,7 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-new_window pixel 1
+new_window pixel 0
 
 # thin borders
 # hide_edge_borders both
@@ -61,7 +61,7 @@ gaps inner 6
 gaps outer 3
 
 smart_gaps on
-smart_borders on
+#smart_borders on
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
@@ -161,14 +161,14 @@ mode "resize" {
         bindsym l resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
-#	bindsym Left resize shrink width 10 px or 10 ppt
-#        bindsym Down resize grow height 10 px or 10 ppt
-#        bindsym Up resize shrink height 10 px or 10 ppt
-#        bindsym Right resize grow width 10 px or 10 ppt
+#	    bindsym Left resize shrink width 10 px or 10 ppt
+#       bindsym Down resize grow height 10 px or 10 ppt
+#       bindsym Up resize shrink height 10 px or 10 ppt
+#       bindsym Right resize grow width 10 px or 10 ppt
 
 # back to normal: Enter or Escape
 	bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -206,8 +206,8 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
-bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set 5%+ && notify-send "Brightness - $(brightnessctl -get | cut -c1-2)%"
+bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 5%- && notify-send "Brightness - $(brightnessctl -get | cut -c1-2)%"
 
 # change focus
 bindsym $mod+h focus left
@@ -254,7 +254,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+Shift+Ctrl+space focus mode_toggle
 
 # focus the parent container
-# bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # open new empty workspace
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
@@ -273,7 +273,7 @@ bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill 
 bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
 
 # audio control
-bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -361,7 +361,7 @@ for_window [class=TelegramDesktop] focus
 # exec_always --no-startup-id picom -b
 
 # for custom config:
-exec_always --no-startup-id picom --config  ~/.config/picom.conf
+exec_always --no-startup-id picom --experimental-backend
 
 #############################################
 # autostart applications/services on login: #
@@ -394,7 +394,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
-exec --no-startup-id sleep 2 && nitrogen --restore
+exec --no-startup-id sleep 2 && nitrogen --random --set-centered --set-color=#000000
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # set powersavings for display:
@@ -506,7 +506,7 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 # LAUNCH POLYBAR
 ###############################
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh --uhoh-dark
 
 ############################################
 # bar settings (input comes from i3blocks) #
