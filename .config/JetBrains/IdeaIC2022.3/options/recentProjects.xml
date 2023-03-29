@@ -1,0 +1,88 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/iftest">
+          <value>
+            <RecentProjectMetaInfo frameTitle="iftest" projectWorkspaceId="2BokOh9iNbLPQ0sayNOrzagODnQ">
+              <option name="activationTimestamp" value="1657580917340" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-221.5921.22" />
+              <option name="buildTimestamp" value="1655852223227" />
+              <frame x="1284" y="13" width="1263" height="1414" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1657580849021" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/IdeaProjects/controlP5 TEST">
+          <value>
+            <RecentProjectMetaInfo frameTitle="controlP5 TEST – controlP5_TEST.java" projectWorkspaceId="2BoAzoR2lgojG7GuWYPGpQp4of7">
+              <option name="activationTimestamp" value="1657585182078" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-221.5921.22" />
+              <option name="buildTimestamp" value="1655852223227" />
+              <frame x="1284" y="13" width="1263" height="1414" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1657585028175" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/IdeaProjects/G4PTest">
+          <value>
+            <RecentProjectMetaInfo frameTitle="G4PTest – G4PTest.java" projectWorkspaceId="2BolUcf4IId1viBcEMylRzAblLY">
+              <option name="activationTimestamp" value="1657686420373" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-221.5921.22" />
+              <option name="buildTimestamp" value="1655852223227" />
+              <frame x="0" y="0" width="2560" height="1440" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1657585186970" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/IdeaProjects/tulpaIO">
+          <value>
+            <RecentProjectMetaInfo frameTitle="tulpaIO" projectWorkspaceId="2BsEVrfPc1V4pA8YCABb6Re4VJa">
+              <option name="activationTimestamp" value="1657919924198" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-221.5921.22" />
+              <option name="buildTimestamp" value="1655852263666" />
+              <frame x="0" y="0" width="2560" height="1440" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1657686420509" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/projects/tulpaIO">
+          <value>
+            <RecentProjectMetaInfo frameTitle="tulpaIO" projectWorkspaceId="2BsEVrfPc1V4pA8YCABb6Re4VJa">
+              <option name="activationTimestamp" value="1657920071025" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-221.5921.22" />
+              <option name="buildTimestamp" value="1655852231149" />
+              <frame x="0" y="0" width="2560" height="1440" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1657919965881" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/projects/tulpa">
+          <value>
+            <RecentProjectMetaInfo frameTitle="tulpa – tulpa.java" opened="true" projectWorkspaceId="292OaV9pRbNBVpIf0LtogVcS14k">
+              <option name="activationTimestamp" value="1679955523077" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-223.8836.35" />
+              <option name="buildTimestamp" value="1678382502801" />
+              <frame x="0" y="18" width="2560" height="1422" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1679950247990" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastOpenedProject" value="$USER_HOME$/projects/tulpa" />
+    <option name="lastProjectLocation" value="$USER_HOME$/IdeaProjects" />
+  </component>
+</application>

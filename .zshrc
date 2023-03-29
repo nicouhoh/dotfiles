@@ -9,6 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -123,7 +124,7 @@ alias zshrc='nvim ~/.zshrc'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # syntax highlighting in zsh
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # but remove the underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none

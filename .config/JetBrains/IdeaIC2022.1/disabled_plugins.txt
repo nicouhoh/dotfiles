@@ -1,0 +1,10 @@
+Reykjavik
+com.brandiico.jetbrains-nightfall-theme
+com.deadsilly.blackbird.theme
+com.nils-degroot.srcery-theme
+com.pjialin.green-lite-theme
+dev.lankydan.tranquil
+dev.thull.polar
+ent.brainstorm.galizur.theme
+lermitage.jetbrains.darcula.sombre
+me.enaumov.plugins.salmon

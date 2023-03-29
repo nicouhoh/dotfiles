@@ -28,19 +28,21 @@ call plug#begin()
 "{{ Git }}
     Plug 'mhinz/vim-signify'                            " indicate added, modified, removed lines in sign column
     Plug 'itchyny/vim-gitbranch'                        " provides a function to return the current git branch
-    Plug 'itchyny/vim-fugitive'                         " Git commands in Vim
+    " Plug 'itchyny/vim-fugitive'                         " Git commands in Vim
 "{{ LSP (from old dotfiles) }}
     Plug 'neovim/nvim-lspconfig'                        " lsp
     Plug 'kabouzeid/nvim-lspinstall'                    " adds :LspInstall <language> command to nvim-lspconfig
     Plug 'hrsh7th/vim-vsnip'                            " snippets for lsp
     Plug 'hrsh7th/vim-vsnip-integ'                      " plugin integration for vim-vsnip
 "{{ Cute stuff }}
+    Plug 'pavanbhat1999/figlet.nvim'                    " convert to ascii art
 	Plug 'junegunn/vim-emoji'				            " Emojis for vim
     Plug 'kyazdani42/nvim-web-devicons'                 " icons
 "{{ Markdown }}
-	Plug 'suan/vim-instant-markdown', {'rtp': 'after'}	" Markdown Preview
-    Plug 'plasticboy/vim-markdown'                      " for langauge-specific plugins
-    Plug 'masukomi/vim-markdown-folding'                " Fold headers
+    "Plug 'preservim/vim-markdown'                      " for langauge-specific plugins
+    Plug 'tpope/vim-markdown'                           " Markdown syntax
+    Plug 'godlygeek/tabular'                            " Markdown tables
+    Plug 'masukomi/vim-markdown-folding'               " Fold headers
 "{{ Writing }}
     Plug 'reedes/vim-pencil'                            " Make vim more friendly for writing
     Plug 'preservim/vim-lexical'                        " Spell-check, dictionary & thesaurus completion
@@ -72,7 +74,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
 let ayucolor="mirage"
-colorscheme ayu
+colorscheme doom-one
 set wildmenu			    " Display all matches when tab completing
 set wildmode=longest,full
 set hlsearch
@@ -81,9 +83,10 @@ set ignorecase              " case insensitive search
 set hidden			        " Needed to keep multiple buffers open
 set backupdir=~/.nvim/backup//    " Set backup directory
 set directory=~/.nvim/swap//      " Set swapfile directory
-set noswapfile			    " No swap
+"set noswapfile			    " No swap
 set t_Co=256			    " Set if term supports 256 colors
 set number			        " Display line numbers
+set cursorline              " Highlight the current row
 " Show line numbers only in current window
 au WinEnter * :setlocal number      
 au WinLeave * :setlocal nonumber
@@ -94,6 +97,7 @@ let g:rehash256 = 1
 set updatetime=100          " default updatetime 4000ms is not good for async update (i.e. vim-signify)
 set nowrap                  " disable wrapping
 set foldmethod=expr
+set foldlevelstart=20
 let g:pandoc#spell#enabled = 0      "disable pandoc's spell check
 
 

@@ -1,0 +1,14 @@
+<application>
+  <component name="Trusted.Paths">
+    <option name="TRUSTED_PROJECT_PATHS">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/G4PTest" value="true" />
+        <entry key="$USER_HOME$/IdeaProjects/controlP5 TEST" value="true" />
+        <entry key="$USER_HOME$/IdeaProjects/iftest" value="true" />
+        <entry key="$USER_HOME$/IdeaProjects/tulpaIO" value="true" />
+        <entry key="$USER_HOME$/projects/tulpa" value="true" />
+        <entry key="$USER_HOME$/projects/tulpaIO" value="true" />
+      </map>
+    </option>
+  </component>
+</application>

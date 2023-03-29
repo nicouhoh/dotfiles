@@ -1,0 +1,157 @@
+<application>
+  <component name="DynamicPluginEnabler">
+    <trackers>
+      <map>
+        <entry key="292OaV9pRbNBVpIf0LtogVcS14k">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2BoAzoR2lgojG7GuWYPGpQp4of7">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2BokOh9iNbLPQ0sayNOrzagODnQ">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2BolUcf4IId1viBcEMylRzAblLY">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="2BsEVrfPc1V4pA8YCABb6Re4VJa">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="Default (Template) Project">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontScale" value="1.0" />
+    <option name="fontSize" value="18.0" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "AFTER.DISTRACTION.MODE.ARE_GUTTER_ICONS_SHOWN": "false",
+    "AFTER.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN": "false",
+    "AFTER.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT": "0",
+    "AFTER.DISTRACTION.MODE.HIDE_TOOL_STRIPES": "true",
+    "AFTER.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN": "false",
+    "AFTER.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN": "false",
+    "AFTER.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN": "false",
+    "AFTER.DISTRACTION.MODE.IS_WHITESPACES_SHOWN": "false",
+    "AFTER.DISTRACTION.MODE.SHOW_BREADCRUMBS": "false",
+    "AFTER.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR": "false",
+    "AFTER.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS": "false",
+    "AFTER.DISTRACTION.MODE.SHOW_NAVIGATION_BAR": "false",
+    "AFTER.DISTRACTION.MODE.SHOW_NEW_MAIN_TOOLBAR": "false",
+    "AFTER.DISTRACTION.MODE.SHOW_STATUS_BAR": "false",
+    "BEFORE.DISTRACTION.MODE.ARE_GUTTER_ICONS_SHOWN": "true",
+    "BEFORE.DISTRACTION.MODE.ARE_LINE_NUMBERS_SHOWN": "true",
+    "BEFORE.DISTRACTION.MODE.EDITOR_TAB_PLACEMENT": "1",
+    "BEFORE.DISTRACTION.MODE.HIDE_TOOL_STRIPES": "false",
+    "BEFORE.DISTRACTION.MODE.IS_FOLDING_OUTLINE_SHOWN": "true",
+    "BEFORE.DISTRACTION.MODE.IS_INDENT_GUIDES_SHOWN": "true",
+    "BEFORE.DISTRACTION.MODE.IS_RIGHT_MARGIN_SHOWN": "true",
+    "BEFORE.DISTRACTION.MODE.IS_WHITESPACES_SHOWN": "false",
+    "BEFORE.DISTRACTION.MODE.SHOW_BREADCRUMBS": "true",
+    "BEFORE.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR": "false",
+    "BEFORE.DISTRACTION.MODE.SHOW_METHOD_SEPARATORS": "false",
+    "BEFORE.DISTRACTION.MODE.SHOW_NAVIGATION_BAR": "true",
+    "BEFORE.DISTRACTION.MODE.SHOW_NEW_MAIN_TOOLBAR": "false",
+    "BEFORE.DISTRACTION.MODE.SHOW_STATUS_BAR": "true",
+    "BuildView.Splitter.Proportion": "0.43438154",
+    "ColorChooser.RecentColors": "172-86-228-255,,,101-27-150-255,,,96-54-124-255,,,79-79-79-255,,,235-235-235-255,,,199-199-199-255,,,179-179-179-255,,,23-23-27-255,,,197-197-197-255,,,66-66-66-255,,,59-59-59-255,,,71-71-71-255,,,226-226-226-255,,,209-208-208-255,,,128-128-128-255,,,157-157-157-255",
+    "ExternalToolDialog.advanced.expanded": "true",
+    "FindSplitterProportion": "0.4452871",
+    "InstalledPluginsSearchHistory": "/tag:theme /sortBy:downloads\n/tag:theme\n/tag:theme /sortBy:downloads light\nvim",
+    "KEYMAP": "ctrl+D",
+    "MarketplacePluginsSearchHistory": "monochrome\nmonocr\nmonoc\nmono\ntheme minimal",
+    "NextRunPlatformUpdateBuild": "IC-223.8836.41",
+    "NextRunPlatformUpdateVersion": "2022.3.3",
+    "NonModalCommitCustomization.IsApplied": "true",
+    "PluginConfigurable.selectionTab": "1",
+    "RunOnceActivity.se.text.search": "true",
+    "SAVED_ANDROID_NPW_LANGUAGE": "Kotlin",
+    "SettingsSearchHistory": "unused\nTODO\ncolor\nString\nfolding",
+    "XFramesView.AdPanel.SwitchFrames.enabled": "false",
+    "appcds.runOnSecondStart": "IC-223.8836.35-c0dcba196354bbf0c7c0657289c11394f95192e3e021e002a26ca62d5c1ca380",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "bundled.plugins.list.saved.version": "IC-223.8836.35",
+    "com.intellij.ide.projectWizard.generators.JavaNewProjectWizard$Step.selectedStep": "IntelliJ",
+    "com.intellij.ide.wizard.NewProjectWizardLanguageStep.selectedStep": "Java",
+    "com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor": "Sources",
+    "debugger.layout.watches.defaultThreadsProportion": "0.56414765",
+    "debugger.smart.chooser.counter": "3",
+    "debugger.speed.search.tree.option.hint.counter": "1",
+    "decompiler.legal.notice.accepted": "true",
+    "defaultJdkConfigured": "true",
+    "eclipse.projects.detected": "",
+    "file.gist.reindex.count": "46",
+    "fileTypeChangedCounter": "1",
+    "fontSizeToResetConsole": "22.0",
+    "fontSizeToResetEditor": "22.0",
+    "got.it.tooltip.extract.method.gotit.navigate": "1",
+    "gotit.previous.run": "IC-223.8836.35",
+    "ide.memory.adjusted": "true",
+    "ideavim.statistics.timestamp": "1678852142685",
+    "ift.learning.panel.opened.in": "221.5787.30",
+    "installed.kotlin.plugin.version": "223-1.8.0-release-345-IJ8836.35",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/home/nicouhoh/projects/tulpaIO",
+    "migrate.android.sdk.path.to.roamable.storage": "false",
+    "previousColorScheme": "_@user_Dark",
+    "project.wizard.group": "newWizard.com.intellij.ide.wizard.NewProjectBuilder",
+    "registry.to.advanced.settings.migration.build": "IC-223.8836.35",
+    "selected.color.option.type": "TODO_DEFAULT_ATTRIBUTES",
+    "tasks.pass.word.conversion.enforced": "true"
+  },
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/nicouhoh/projects/tulpaIO",
+      "/usr/share/processing/core/library/linux-amd64",
+      "/home/nicouhoh/projects/tulpa"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector",
+      "com.android.tools.idea.profilers.capture.MemoryCaptureFileType$Detector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+  <component name="ShownTips"><![CDATA[{
+  "shownTips": {
+    "IntroduceVariable": 1672682192194,
+    "CtrlW": 1677091529306,
+    "GoToImplementation": 1671909270971,
+    "FocusProjectToolWindow": 1679950253644,
+    "RecentFiles": 1677004099645,
+    "QuickSwitchScheme": 1672266684888,
+    "FindReplaceToggle": 1677805685427,
+    "ShowUsages": 1676916839082,
+    "ContextActions": 1671643369591,
+    "OverrideImplementMethods": 1676491633604,
+    "CtrlD": 1677219215431,
+    "PostfixCompletion": 1676564350814,
+    "FindInPath": 1677364406412,
+    "VcsQuickList": 1672456028379,
+    "CtrlShiftI": 1672606226691
+  }
+}]]></component>
+  <component name="TerminalCommandHistoryManager">
+    <command-history-files>
+      <command-history-file filename="tulpa-history" project-path="$USER_HOME$/projects/tulpa" last-access-time="1672099156244" />
+    </command-history-files>
+  </component>
+</application>

@@ -1,35 +1,15 @@
-# exec --no-startup-id ~/set_once_i3.sh
-# This file is a modified version based on default i3-config-wizard config
-# source is available here:
-# https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
-# Maintainer: joekamprad [joekamprad@endeavouros.com]
-# https://endeavouros.com
-#
-# iconic font icon search: https://fontawesome.com/v4.7/cheatsheet/
-#
-# --> to update this run the following command (will backup existing setup file)
-# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
-#
-# Endeavouros-i3 config file
-# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/endeavouros-i3wm-setup
-# EndeavourOS wiki holds some Information also: https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
-# Please see http://i3wm.org/docs/userguide.html for the official i3 reference!
-
-#######################
-# config starts here: #
-#######################
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: Noto Sans Regular 12
-
-# set the mod key to the winkey:
-# set $mod Mod4
+# exec --no-startup-ithe winkey:
+#set $mod Mod4
 
 # set the mod key to the alt key:
-set $mod Mod1
+
+    ## use super key
+        #set $mod Mod4
+        #set $mod2 Mod1
+
+    # use alt key
+        set $mod Mod1
+        set $mod2 Mod4
 
 #####################
 # workspace layout: #
@@ -37,6 +17,7 @@ set $mod Mod1
 
 # default i3 tiling mode:
 workspace_layout default
+
 
 # i3 stacking layout:
 # Each window will be fullscreen and tabbed top to bottom.
@@ -64,7 +45,12 @@ smart_gaps on
 #smart_borders on
 
 # show window title bars (not officially supported with i3gaps)
-#default_border normal
+default_border pixel 0
+
+# WORKAROUND to fix a bug after v4.21 in which title bars still appear on some applications
+for_window [class=Chromium] border pixel 0
+for_window [class="Alacritty"] border pixel 0
+for_window [class="firefox"] border pixel 0
 
 # window title alignment
 #title_align center
@@ -506,41 +492,41 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 # LAUNCH POLYBAR
 ###############################
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh --uhoh-dark
+exec_always --no-startup-id ~/.config/polybar/launch.sh --shades
 
 ############################################
 # bar settings (input comes from i3blocks) #
 ############################################
 
 
-# Start i3bar to display a workspace bar
-# (plus the system information i3status finds out, if available)
+## Start i3bar to display a workspace bar
+## (plus the system information i3status finds out, if available)
 #bar {
-		#font pango: Noto Sans Regular 10
-		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	#position top
-##	    	i3bar_command i3bar --transparency
+#		font pango: Noto Sans Regular 10
+#		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	    	position top
+#	    	i3bar_command i3bar --transparency
 ## it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 ## reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    #tray_output primary
-		    #tray_padding 0
+#		    tray_output primary
+#		    tray_padding 0
 #
 ## When strip_workspace_numbers is set to yes,
 ## any workspace that has a name of the form
 ## “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
-###strip_workspace_name no
+##strip_workspace_numbers yes
+##strip_workspace_name no
 #
-		    #colors {
-		    #separator          $purple
-		    #background         $darkgrey
-		    #statusline         $white
+#		    colors {
+#		    separator          $purple
+#		    background         $darkgrey
+#		    statusline         $white
 ##                          		border 		        bg		txt		indicator
-		#focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		#active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		#inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		#urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	#}
+#		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+#		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+#		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+#		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+#	}
 #}
 
 # you can add different bars for multidisplay setups on each display:
@@ -555,13 +541,13 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh --uhoh-dark
 #	i3bar_command i3bar --transparency
 #	output HDMI-0
 #	position bottom
-#
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
+
+## When strip_workspace_numbers is set to yes,
+## any workspace that has a name of the form
+## “[n][:][NAME]” will display only the name.
 #strip_workspace_numbers yes
 ##strip_workspace_name no
-#
+
 #	colors {
 #		separator          $purple
 #		background         $darkbluetrans

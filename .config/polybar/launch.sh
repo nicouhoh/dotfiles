@@ -73,6 +73,14 @@ elif [[ "$1" == "--uhoh-dark" ]]; then
 	style="uhoh-dark"
 	launch_bar
 
+elif [[ "$1" == "--slimpoly" ]]; then
+	style="slimpoly"
+	launch_bar
+
+elif [[ "$1" == "--uhoh-slim" ]]; then
+	style="uhoh-slim"
+	launch_bar
+
 else
 	cat <<- EOF
 	Usage : launch.sh --theme

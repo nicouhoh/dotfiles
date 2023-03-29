@@ -1,0 +1,6 @@
+<keymap version="1" name="XWin copy" parent="Default for XWin">
+  <action id="RecentLocations" />
+  <action id="Tool_External Tools_Open in Emacs">
+    <keyboard-shortcut first-keystroke="shift ctrl e" />
+  </action>
+</keymap>

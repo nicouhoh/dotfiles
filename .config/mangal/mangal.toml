@@ -1,0 +1,40 @@
+[anilist]
+enable = false
+
+[downloader]
+async = true
+chapter_name_template = '[{padded-index}] {chapter}'
+create_manga_dir = true
+default_source = ''
+path = '~/Documents/mangal'
+
+[formats]
+use = 'pdf'
+
+[history]
+save_on_download = false
+save_on_read = true
+
+[icons]
+variant = 'nerd'
+
+[logs]
+level = 'info'
+write = false
+
+[mangadex]
+language = 'en'
+nsfw = false
+# show_unavailable_chapters = false
+show_unavailable_chapters = true
+
+[mini]
+search_limit = 20
+
+[reader]
+pdf = 'zathura'
+cbz = 'zathura'
+zip = 'zathura'
+plain = 'zathura'
+cbr = 'zathura'
+read_in_browser = false
