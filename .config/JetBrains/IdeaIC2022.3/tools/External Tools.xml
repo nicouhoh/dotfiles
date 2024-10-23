@@ -1,9 +1,0 @@
-<toolSet name="External Tools">
-  <tool name="Open in Emacs" description="Load current file in Emacs" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
-    <exec>
-      <option name="COMMAND" value="/usr/bin/emacsclient" />
-      <option name="PARAMETERS" value="-n $FilePath$" />
-      <option name="WORKING_DIRECTORY" value="$FileDir$" />
-    </exec>
-  </tool>
-</toolSet>
