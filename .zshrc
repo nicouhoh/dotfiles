@@ -27,7 +27,12 @@ export TERM=xterm-256color        # for common 256 color terminals (e.g. gnome-t
 alias ls="ls --color"
 alias zshrc="vim ~/.zshrc"
 alias src="source ~/.zshrc"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+if [ $(uname -m) = "arm64" ]; then
+  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+else
+  source ~/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 ## case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
