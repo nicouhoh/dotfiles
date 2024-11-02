@@ -25,6 +25,7 @@ export TERM=xterm-256color        # for common 256 color terminals (e.g. gnome-t
 # source ~/.config/kitty/LS_COLORS/lscolors.sh
 
 alias ls="ls --color"
+alias vim="nvim"
 alias zshrc="vim ~/.zshrc"
 alias src="source ~/.zshrc"
 
