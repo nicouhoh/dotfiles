@@ -28,6 +28,7 @@ alias ls="ls --color"
 alias vim="nvim"
 alias zshrc="vim ~/.zshrc"
 alias src="source ~/.zshrc"
+alias debug="live-server --browser=/Applications/'Firefox Developer Edition.app'"
 
 if [ $(uname -m) = "arm64" ]; then
   source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme

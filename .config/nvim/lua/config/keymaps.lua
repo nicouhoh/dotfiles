@@ -30,12 +30,15 @@ keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sk", "<C-w>k")
 
 -- Resize window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><right>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
+keymap.set("n", "<C><left>", "<C-w><")
+keymap.set("n", "<C><right>", "<C-w>>")
+keymap.set("n", "<C><up>", "<C-w>+")
+keymap.set("n", "<C><down>", "<C-w>-")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
-vim.diagnostic.goto_next()
+keymap.set("n", "<C-e>", function()
+  vim.diagnostic.goto_next()
+end, opts)
+keymap.set("n", "<C-E>", function()
+  vim.diagnostic.goto_prev()
 end, opts)
