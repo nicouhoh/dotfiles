@@ -1,0 +1,25 @@
+# Syntax is "key = value". Whitespace doesn't matter
+
+# font-family = "SF Mono"
+font-family = "MesloLGS NF Regular"
+font-size = 16
+
+# Splits & moving
+keybind = ctrl+s>v=new_split:right
+keybind = ctrl+s>s=new_split:down
+keybind = ctrl+w>h=goto_split:left
+keybind = ctrl+w>l=goto_split:right
+keybind = ctrl+w>j=goto_split:down
+keybind = ctrl+w>k=goto_split:up
+keybind = cmd+shift+equal=resize_split:up,10
+keybind = cmd+shift+minus=resize_split:down,10
+
+# Quake terminal
+keybind = global:cmd+opt+grave_accent=toggle_quick_terminal
+
+theme = light:Apple System Colors Light,dark:Apple System Colors
+
+# split into multiple files:
+#config-file = some/relative/sub/config
+#config-file = ?optional/config
+#config-file = /absolute/path/config
