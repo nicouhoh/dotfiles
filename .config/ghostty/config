@@ -17,9 +17,12 @@ keybind = cmd+shift+minus=resize_split:down,10
 # Quake terminal
 keybind = global:cmd+opt+grave_accent=toggle_quick_terminal
 
-theme = light:Apple System Colors Light,dark:Apple System Colors
+theme = Aardvark Blue
+
 
 # split into multiple files:
 #config-file = some/relative/sub/config
 #config-file = ?optional/config
 #config-file = /absolute/path/config
+
+config-file = ?theme
